@@ -1,0 +1,25 @@
+output_dir: data/ckpt/SFT
+
+
+data:
+  data_module: SFTModule
+  max_position_embeddings: 4096 # 5120
+  batch_size: 1
+  num_workers: 8
+
+
+# model:
+  # model_module: MMMist
+  # resume_from_checkpoint: data/ckpt/model_0_2000.pt
+
+
+
+init_step: 0
+
+training:
+  max_epochs: 1
+  accumulate_grad_batches: 64
+  checkpoint_every_n_steps: 10000
+  weight_decay: 0.05
+  lr: 0.00001
+
